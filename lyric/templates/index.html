@@ -1,1 +1,32 @@
-<h1> welcome to the mezamur</h1>
+{%extends 'base.html'%} {% block content %}{{ block.super}}
+<h1 style="text-align: center"> Gospel Songs</h1>
+
+<div class="container" style="align-content:center">
+
+    {% for post in posts %}
+
+
+    <div class="card mb-3" style="width: 70rem;">
+
+        <div class="card-body">
+            <pre><h5 class="card-title">{{post.title}}</h5></pre>
+            <pre><p class="card-text">{{post.lyrics}}</p></pre>
+            <pre><p class="card-text">{{post.written_by}}</p></pre>
+
+        </div>
+    </div>
+
+
+
+    {% empty %}
+    <p style="text-align: center">No posts</p>
+    {% endfor %}
+
+
+
+
+
+
+</div>
+
+{% endblock %}

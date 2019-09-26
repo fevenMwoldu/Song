@@ -1,0 +1,41 @@
+{%extends 'base.html'%} {% block content %}
+<div>
+    <img src="../../static/Latest-Praise-and-Worship-Songs-2019-Best-English-Gospel.jpg" alt="no image" width="100%" height="400px">
+</div>
+<div class="container">
+
+    <div class="row">
+        {% if songs %}
+        <h2>Found {{ songs|length }} item of {{search_term}}</h2>
+        {% else %}
+        <h2> {{message}}</h2>
+        {% endif %}
+
+    </div>
+
+    <div class="row">
+
+        {% if songs %} {% for song in songs %}
+
+
+
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                <pre><h1>{{song.title}}</h1></pre>
+                <pre><p class="card-text">{{song.lyric}}</p></pre>
+                <pre><p class="card-text">{{song.written_by}}</p></pre>
+
+
+            </div>
+        </div>
+
+
+
+
+        {% endfor %} {% else %}
+        <p>no result found</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
